@@ -1,0 +1,7 @@
+# on demarre le moteur de reecriture d'url
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# On réécrit l'url  ($1 signifie la première regle de reecriture)
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1 [QSA,L]
